@@ -7,7 +7,7 @@
 
 ---
 
-## 📋 Resumen Ejecutivo
+##  Resumen Ejecutivo
 
 Este documento describe un intento de phishing altamente sofisticado que combina la suplantación de la plataforma de empleo Indeed con la identidad de una empresa real (Cress-Sport IT) para engañar a candidatos en busca de trabajo. La víctima había solicitado activamente una oferta publicada en Indeed, lo que añade una capa adicional de credibilidad al ataque.
 
@@ -17,7 +17,7 @@ El caso fue detectado a tiempo y no se produjo la instalación del software mali
 
 ---
 
-## 🎯 Vector de Ataque
+##  Vector de Ataque
 
 | Elemento | Descripción |
 |----------|-------------|
@@ -32,7 +32,7 @@ El caso fue detectado a tiempo y no se produjo la instalación del software mali
 
 ---
 
-## 🔍 Desarrollo del Ataque
+##  Desarrollo del Ataque
 
 ### 1. Postulación inicial (legítima)
 
@@ -77,7 +77,7 @@ Este patrón es característico de estafas que buscan instalar software de acces
 
 ---
 
-## 🔬 Análisis Técnico
+##  Análisis Técnico
 
 ### 1. Análisis con urlscan.io (Página QR: improve-platform.com)
 
@@ -153,9 +153,9 @@ COMPROMISO DEL DISPOSITIVO (si se completan los pasos)
 
 ---
 
-## 🚨 Señales de Alerta Identificadas
+##  Señales de Alerta Identificadas
 
-### 🔴 1. Inconsistencia en el remitente (SEÑAL CRÍTICA)
+###  1. Inconsistencia en el remitente (SEÑAL CRÍTICA)
 
 | Elemento | Problema |
 |----------|----------|
@@ -164,20 +164,20 @@ COMPROMISO DEL DISPOSITIVO (si se completan los pasos)
 
 Un correo de una empresa **nunca** usa el dominio de una plataforma externa. Debería ser `@cress-sport.com`, **no `@indeed.com`**.
 
-### 🔴 2. Tácticas de urgencia y presión
+###  2. Tácticas de urgencia y presión
 
 - *"los horarios de entrevista son muy limitados"*
 - *"dentro de las próximas 48 a 72 horas"*
 - *"antes de que el sistema de programación se cierre"*
 
-### 🔴 3. Uso de código QR como técnica de evasión
+###  3. Uso de código QR como técnica de evasión
 
 El QR traslada a la víctima del ordenador al teléfono, donde:
 - Es más difícil analizar la URL
 - Es más fácil instalar apps maliciosas
 - Se evaden sistemas de seguridad de escritorio
 
-### 🔴 4. Dominios de vida efímera
+###  4. Dominios de vida efímera
 
 | Dominio | Antigüedad | Estado |
 |---------|-----------|--------|
@@ -186,7 +186,7 @@ El QR traslada a la víctima del ordenador al teléfono, donde:
 
 **Ambos dominios fueron creados minutos antes del ataque** para evitar su detección.
 
-### 🔴 5. Proceso de entrevista atípico
+###  5. Proceso de entrevista atípico
 
 | Proceso legítimo | Proceso fraudulento |
 |------------------|---------------------|
@@ -195,13 +195,13 @@ El QR traslada a la víctima del ordenador al teléfono, donde:
 | Sin instalación | VPN + código de invitación |
 | Sin acceso remoto | Solicitan control del dispositivo |
 
-### 🔴 6. Beneficios inusuales en la oferta
+###  6. Beneficios inusuales en la oferta
 
 "Uniforme proporcionado" para un puesto de **Especialista en Seguridad TI**: incompatible con el perfil. La oferta fue creada sin conocimiento del sector.
 
 ---
 
-## 🤔 ¿Cómo es posible que los estafadores supieran que la víctima se había postulado?
+##  ¿Cómo es posible que los estafadores supieran que la víctima se había postulado?
 
 ### Hipótesis más probable: La oferta fue creada por los estafadores
 
@@ -226,7 +226,7 @@ La oferta publicada en Indeed fue creada por los atacantes para:
 
 ---
 
-## 🛡️ Medidas de Mitigación
+##  Medidas de Mitigación
 
 ### Para la víctima (aplicadas)
 
