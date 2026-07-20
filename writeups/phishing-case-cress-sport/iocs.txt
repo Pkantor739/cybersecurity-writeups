@@ -5,27 +5,50 @@
 # Estado: Reportado a Indeed
 
 # ============================================
-# DOMINIOS
+# INFORMACIÓN DEL ATAQUE
 # ============================================
 
-# Correo original (URL del enlace)
+# Este ataque es especialmente peligroso porque los estafadores abusaron
+# del sistema de mensajería legítimo de Indeed para enviar el mensaje
+# fraudulento a través de la propia plataforma.
+
+# El mensaje fue enviado por un usuario que se hacía pasar por:
+# - Empresa: Cress-Sport IT
+# - Reclutador: Theo Pierre Justin
+
+# ============================================
+# DOMINIOS FRAUDULENTOS (BLOQUEAR)
+# ============================================
+
+# URL del enlace malicioso dentro del mensaje de Indeed
+pablosanchez23fg.76evistatechno.com
 pablosanchezs23fg_76e.vistatechno.com
 
-# Página QR intermedia
+# Página QR intermedia (17 segundos de antigüedad)
 improve-platform.com
 
-# Página fraudulenta final
+# Página fraudulenta final (con logos de Indeed)
 76e.vistatechno.com
 
-# Dominios base
+# Dominios base utilizados por los atacantes
 vistatechno.com
 vistatechino.com
 
 # ============================================
-# IPs
+# DOMINIOS LEGÍTIMOS DE INDEED (NO BLOQUEAR)
+# ============================================
+# Estos dominios son legítimos, pero fueron utilizados por los estafadores
+# para enviar el mensaje fraudulento a través de la plataforma de Indeed.
+
+messages.indeed.com          # Sistema de mensajería de Indeed
+bounces.indeed.com           # Sistema de envío de correos de Indeed
+
+# ============================================
+# IPs FRAUDULENTAS
 # ============================================
 
-104.21.39.143         # Cloudflare - Isla Ascensión
+104.21.39.143                # Cloudflare - Isla Ascensión (vistatechno.com)
+162.159.130.67               # Cloudflare - Isla Ascensión (messages.indeed.com - LEGÍTIMO)
 
 # ============================================
 # CORREOS (remitentes fraudulentos)
@@ -37,28 +60,54 @@ Cress-Sport IT <no-reply@indeed.com>
 # URLs COMPLETAS
 # ============================================
 
+# URL del mensaje en Indeed (legítima - NO BLOQUEAR)
+https://messages.indeed.com/conversations/Q09OVkVSU0FUSU9OX1NFUlZJQ0VfRU5DUllQVEVELy8vQUFBQUFSdi10Nnh5UzEzUlFPak9Sck5RcjJKdndRLWZpejVYVEJ4OUlEa2s5QkJUVzlUSFhOWDNCY08waXB5YTBnPT0=?iae=UTgnqA
+
+# URLs fraudulentas (BLOQUEAR)
 https://pablosanchezs23fg_76e.vistatechno.com/
 https://improve-platform.com/
 https://76e.vistatechno.com/
 
 # ============================================
+# NOMBRE DEL SUPUESTO RECLUTADOR
+# ============================================
+
+Theo Pierre Justin            # Nombre utilizado por los estafadores
+                              # No hay evidencia de que esta persona exista
+                              # o esté vinculada a Cress-Sport IT
+
+# ============================================
 # OBSERVACIONES
 # ============================================
 
-# 1. Dominios registrados minutos antes del ataque
-# 2. Certificados SSL emitidos el mismo día
-# 3. Ubicación IP: Isla Ascensión (incompatible con empresa española)
-# 4. Uso de Cloudflare como proxy de ocultación
-# 5. PowerDMARC: Índice de confianza 100/100 (no detectado)
-# 6. El correo suplanta a Indeed (dominio @indeed.com) y a Cress-Sport IT
-# 7. La víctima se postuló a una oferta real en Indeed
+# 1. El mensaje fue enviado a través del sistema legítimo de Indeed
+# 2. El remitente visible era "Cress-Sport IT <no-reply@indeed.com>"
+# 3. El mensaje fue enviado por "bounces.indeed.com" (legítimo)
+# 4. El mensaje estaba firmado por "indeed.com" (legítimo)
+# 5. El enlace del mensaje apuntaba a "messages.indeed.com" (legítimo)
+# 6. Dentro del mensaje había un enlace a dominio fraudulento
+# 7. El dominio fraudulento redirigía a improve-platform.com (17 segundos)
+# 8. improve-platform.com redirigía a 76e.vistatechno.com
+# 9. 76e.vistatechno.com tenía Índice de Confianza 100/100 (NO detectado)
+# 10. La oferta de empleo original fue publicada en Indeed
+# 11. La oferta incluía "uniforme proporcionado" para puesto IT (inconsistente)
 
 # ============================================
 # RECOMENDACIONES
 # ============================================
 
-# - Bloquear estos dominios en firewalls/proxies
-# - Reportar el correo a Indeed (phishing@indeed.com)
-# - No hacer clic en enlaces sospechosos
+# - Bloquear los dominios fraudulentos en firewalls/proxies
+# - Reportar a Indeed (phishing@indeed.com)
+# - No hacer clic en enlaces sospechosos dentro de mensajes de Indeed
+# - Verificar la identidad del empleador antes de continuar
 # - No escanear códigos QR de fuentes desconocidas
-# - Verificar siempre el remitente de los correos
+# - Desconfiar de mensajes que crean urgencia (48-72 horas)
+
+# ============================================
+# ACTUALIZACIONES
+# ============================================
+
+# v1.0 - 20/07/2026 - Creación inicial
+# v1.1 - 20/07/2026 - Añadido análisis de messages.indeed.com
+# v1.2 - 20/07/2026 - Añadido nombre del reclutador "Theo Pierre Justin"
+# v1.3 - 20/07/2026 - Añadida URL completa de Indeed y nuevos dominios
