@@ -1,0 +1,64 @@
+# INDICADORES DE COMPROMISO (IOCs)
+# Caso: Phishing - Cress-Sport IT / Indeed
+# Fecha: 20 de julio de 2026
+# Autor: Pablo Rodríguez Sánchez
+# Estado: Reportado a Indeed
+
+# ============================================
+# DOMINIOS
+# ============================================
+
+# Correo original (URL del enlace)
+pablosanchezs23fg_76e.vistatechno.com
+
+# Página QR intermedia
+improve-platform.com
+
+# Página fraudulenta final
+76e.vistatechno.com
+
+# Dominios base
+vistatechno.com
+vistatechino.com
+
+# ============================================
+# IPs
+# ============================================
+
+104.21.39.143         # Cloudflare - Isla Ascensión
+
+# ============================================
+# CORREOS (remitentes fraudulentos)
+# ============================================
+
+Cress-Sport IT <no-reply@indeed.com>
+
+# ============================================
+# URLs COMPLETAS
+# ============================================
+
+https://pablosanchezs23fg_76e.vistatechno.com/
+https://improve-platform.com/
+https://76e.vistatechno.com/
+
+# ============================================
+# OBSERVACIONES
+# ============================================
+
+# 1. Dominios registrados minutos antes del ataque
+# 2. Certificados SSL emitidos el mismo día
+# 3. Ubicación IP: Isla Ascensión (incompatible con empresa española)
+# 4. Uso de Cloudflare como proxy de ocultación
+# 5. PowerDMARC: Índice de confianza 100/100 (no detectado)
+# 6. El correo suplanta a Indeed (dominio @indeed.com) y a Cress-Sport IT
+# 7. La víctima se postuló a una oferta real en Indeed
+
+# ============================================
+# RECOMENDACIONES
+# ============================================
+
+# - Bloquear estos dominios en firewalls/proxies
+# - Reportar el correo a Indeed (phishing@indeed.com)
+# - No hacer clic en enlaces sospechosos
+# - No escanear códigos QR de fuentes desconocidas
+# - Verificar siempre el remitente de los correos
